@@ -1,12 +1,5 @@
  
-cd C:\Users\pavan\Downloads\AI-EDITOROR
-notepad README.md
-```
 
-When Notepad opens and asks "Do you want to create a new file?", click **Yes**.
-
-Then paste this content:
-```
 # Collaborative Code Editor
 
 A real-time collaborative code editor with AI completions for JavaScript, Python, and Java.

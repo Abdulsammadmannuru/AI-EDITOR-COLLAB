@@ -1,0 +1,44 @@
+<div class="editor-wrapper">
+  <div class="editor-header">
+    <div class="header-left">
+      <h1>🚀 Collaborative Code Editor</h1>
+      <span class="room-id">Room: {{ roomId }}</span>
+    </div>
+    
+    <div class="header-center">
+      <select 
+        class="language-selector" 
+        [(ngModel)]="selectedLanguage" 
+        (change)="changeLanguage(selectedLanguage)">
+        <option *ngFor="let lang of availableLanguages" [value]="lang">
+          {{ lang }}
+        </option>
+      </select>
+    </div>
+    
+    <div class="header-right">
+      <div class="status-indicator" [class.connected]="isConnected">
+        <span class="status-dot"></span>
+        <span>{{ isConnected ? 'Connected' : 'Disconnected' }}</span>
+      </div>
+      
+      <div class="user-count">
+        <span class="user-icon">👥</span>
+        <span>{{ getUserCount() }} active</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="editor-content">
+    <div #editorContainer class="codemirror-container"></div>
+  </div>
+
+  <div class="info-bar">
+    <div class="info-item">
+      <span>💡 Press <kbd>Ctrl+Space</kbd> for AI completions</span>
+    </div>
+    <div class="info-item">
+      <span>User: {{ userId }}</span>
+    </div>
+  </div>
+</div>

@@ -743,7 +743,7 @@ curl -X POST http://localhost:8080/api/complete \
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 collaborativeEditor/
@@ -1006,9 +1006,9 @@ debug: (str) => {
    - SockJS fallback for older browsers
    - Best on Chrome, Firefox, Edge
 
----
 
-## 🚧 Future Enhancements
+
+##  Future Enhancements
 
 ### Phase 1: Core Improvements
 
@@ -1094,11 +1094,10 @@ Add integration tests
 . Add keyboard shortcuts customization
 . Add syntax error highlighting
 
----
 
-## 🤝 Contributing
 
-We welcome contributions! Please follow these steps:
+
+ Please follow these steps:
 
 1. Create A repository
 2. Create a feature branch
@@ -1113,7 +1112,7 @@ We welcome contributions! Please follow these steps:
    ```bash
    git push origin feature/amazing-feature
    ```
-
+5. PUll
 
 
 

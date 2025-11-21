@@ -13,50 +13,8 @@ A full-stack web application enabling multiple developers to edit code simultane
 - Responsive UI: Clean, modern interface with CodeMirror 6 editor
 - Conflict-free Updates: Real-time synchronization without merge conflicts
 
----
 
 
-### System Architecture Diagram
-
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                         USER BROWSER                             │
-│  ┌───────────────────────────────────────────────────────────┐  │
-│  │              Angular Frontend Application                  │  │
-│  │  ┌─────────────────────┐  ┌──────────────────────────┐   │  │
-│  │  │   CodeMirror 6      │  │   Collaboration UI       │   │  │
-│  │  │   Editor Component  │  │   (Users, Status)        │   │  │
-│  │  └──────────┬──────────┘  └──────────────────────────┘   │  │
-│  │             │                                              │  │
-│  │  ┌──────────▼────────────────────────────────────────┐   │  │
-│  │  │            Services Layer                          │   │  │
-│  │  │  • CompletionService (HTTP REST)                  │   │  │
-│  │  │  • CollaborationService (WebSocket STOMP)         │   │  │
-│  │  └───────────┬──────────────────┬────────────────────┘   │  │
-│  └──────────────┼──────────────────┼────────────────────────┘  │
-└─────────────────┼──────────────────┼───────────────────────────┘
-                  │                  │
-            HTTP REST          WebSocket STOMP
-                  │                  │
-┌─────────────────▼──────────────────▼───────────────────────────┐
-│                   Spring Boot Backend                           │
-│  ┌───────────────────────────────────────────────────────────┐ │
-│  │                    Controllers Layer                       │ │
-│  │  • CompletionController (REST)                            │ │
-│  │  • CollaborationController (WebSocket)                    │ │
-│  └────────┬──────────────────────────┬────────────────────────┘ │
-│           │                          │                          │
-│  ┌────────▼──────────┐      ┌────────▼─────────────┐          │
-│  │  GeminiService    │      │  WebSocket STOMP     │          │
-│  │  (Business Logic) │      │  Message Broker      │          │
-│  └────────┬──────────┘      └──────────────────────┘          │
-└───────────┼─────────────────────────────────────────────────────┘
-            │
-    ┌───────▼──────────┐
-    │  Google Gemini   │
-    │  API (AI Model)  │
-    └──────────────────┘
-```
 
 ### Component Interaction Flow
 
